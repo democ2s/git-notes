@@ -1,1 +1,1 @@
-# git-notes
+# My Notes on Git
