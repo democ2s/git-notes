@@ -1,0 +1,45 @@
+body {
+  background-color: #f0ebd8;
+  font-family: "Merriweather", serif;
+  font-family: "Playfair Display", serif;
+}
+.main {
+  width: 85%;
+  margin: auto;
+}
+.kc-highlight {
+  font-weight: bold;
+}
+h1 {
+  display: inline-block;
+}
+.section-topic {
+  clear: both;
+}
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.container-left {
+  width: 49%;
+  float: left;
+}
+.container-right {
+  width: 49%;
+  float: right;
+}
+.container-right img {
+  width: 50%;
+  height: 50%;
+}
+
+.notes {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+.section-topic img {
+  width: 50%;
+  height: 50%;
+}

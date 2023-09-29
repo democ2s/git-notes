@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Notes</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,700;1,300;1,400&display=swap"
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,700;1,300;1,400&family=Playfair+Display&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="main">
+        <h1>Git Notes</h1>
+
+        <section class="summary">
+            <h2>Summary</h2>
+            <ul>
+                <li>
+                    Basics of Git and Github
+                </li>
+                <li> Basic commands to clone a repo, work on repo</li>
+                <li>Basic commands for branching</li>
+                <li>Todo</li>
+                <li>Todo</li>
+            </ul>
+        </section>
+        <section class="notes">
+            <section class="section-topic">
+                <h2> Git Introduction</h2>
+                <p>
+                    Git is a version control system (VCS).
+
+                <p>So what is version control software?</p>
+
+                <p>In software development we work on files and constantly update files like add / remove / modify.
+                    Often times we realise we have made some changes and it is now very late to recover the data as we
+                    might have
+                    overridden or deleted the file. And this issue exacerbates to multi folds if there are more than one
+                    person working on files
+                    in a project. To address the issues version control software is developed.</p>
+
+                <p>VSC keeps a close eye on specific folder structure once instructed. Any files which are added,
+                    modified, deleted are all
+                    recorded. At any point we can go back in time to see what the status of the entire file structure so
+                    that if required we
+                    can go back and undo the changes made.</p>
+
+
+                <p>There are many vendors providing types of version control software. Git is one among them. It uses
+                    distributed
+                    architecture instead of centralised version control system. (to avoid single point of failure)</p>
+
+
+                <p>All it requires is installing Git software in our local device. We need learn some commands to
+                    interact with the Git VC.
+                    Here we need to see one important point. Git protects us from data loss from any inadvertent
+                    actions. But what happens
+                    to our data if device itself fails? To address this issue Git provides feature called GitHub.</p>
+                <p>So what is GitHub? GitHub is a website interface for Git software installed in the cloud. This
+                    portal enables users to
+                    manage the data stored in the cloud.</p>
+
+                </p>
+                <h3>Git - Distributed architecture</h3>
+                <p>
+
+                    As shown in the below figure, first a repo (folder) is created in the GitHub (cloud) and all the
+                    neccesary files are added to the remote repo and all files are committed which are now ready for the
+                    users to clone it in their local machine. Now user can create local repo and clone the entire remote
+                    repo into local repo.
+                    The cloning step downloads entire data essentially mirroring the remote repo including the complete
+                    version history and not just snapshots and thus provides completely localised operations which
+                    enables fast access to all files (as everything is local).
+                <p></p>
+                <img src="./images/git-distributes.png" alt="">
+
+                <h4>Key concepts</h4>
+
+                <ul>
+                    <li>Repository</li>
+                    <ul>
+                        <li>A Git repository or repo in short is a folder that contains all the files adn history of a
+                            proejct. As shown in the below figure, local repo are created in project user's machine and
+                            remote repo is created in GitHub</li>
+                    </ul>
+                    <li>In git, there are three main areas : working folder, staging area and git folder (repo)</li>
+                    <li>A file in the Git VCS undergoes following status
+                        <ul>
+                            <li><span class="kc-highlight">Untracked</span> - Files which are newly added to the working
+                                folder and Git has no info
+                                about it or is not started to
+                                track.
+                            </li>
+                            <li><span class="kc-highlight">Modified</span> - Files which are already being tracked and
+                                are yet to committed to database as
+                                final change.</li>
+                            <li><span class="kc-highlight">Unmodified</span> - informing that no changes are made to the
+                                file.</li>
+                            <li><span class="kc-highlight">Staged</span> - Files which are pushed to staging area (it is
+                                just an index file recording
+                                all info required for commit) and
+                                awaiting for final commit i.e. recorded in snapshot.
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li>Commit
+                        <ul>
+                            <li>A commit is a snapshot of your code at a specific point in time. Git takes snapshot of
+                                entire folder system which reflect the new changes along with only
+                                references to the files which
+                                are not changed. Almost all operations of Git is local hence the speed! It only refers
+                                the local data to display entire
+                                history without contacting any other system.</li>
+                        </ul>
+                    </li>
+                    <li>branching
+                        <ul>
+                            <li>Git allows you to create branches to work on features, bug fixes, or experiments
+                                independently. The main branch, often
+                                called "master" or "main," is the default branch where the stable code resides</li>
+                        </ul>
+                    </li>
+                    <li>Merge
+                        <ul>
+                            <li>Merging is the process of combining changes from one branch into another. It's a way to
+                                integrate new features or bug
+                                fixes into the main branch.</li>
+                        </ul>
+                    </li>
+                    <li>Push and pull
+
+                        <ul>
+                            <li>
+                                Pulling is the act of getting changes from a remote repository to your local repository,
+                                while pushing is sending your
+                                local changes to the remote repository. This ensures collaboration and synchronization
+                                among team members.
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>In local repo, any files added, modified needs to be first pushed into staging area before
+                        committing as final change
+                    </li>
+
+                </ul>
+
+
+
+                <h4>Important Git Commands</h4>
+                <ul>
+                    <li> <span class="kc-highlight">git config --global user.name ""</span> and <span
+                            class="kc-highlight">git config --global
+                            user.email ""</span>
+                        <ul>
+                            <li>This is the part of the configuration (one time activity), setting username and email to
+                                reflect in all commits in both local and remote repos.</li>
+                        </ul>
+                    </li>
+                    <li> <span class="kc-highlight">git init</span>
+                        <ul>
+                            <li>Initializes an existing folder as a Git repo.</li>
+                        </ul>
+                    </li>
+                    <li> <span class="kc-highlight">git clone url</span>
+                        <ul>
+                            <li>Retrieve remote rep via url. i.e to clone the remote repo into local. For first time, we
+                                need to authorise the permission
+                                to clone/push/pull into GitHub</li>
+                        </ul>
+                    </li>
+                    <li> <span class="kc-highlight">git status</span>
+                        <ul>
+                            <li>shows files with status like modified in working folder and also any files in staging
+                                area</li>
+                        </ul>
+                    </li>
+                    <li> <span class="kc-highlight">git add filename</span>
+                        <ul>
+                            <li>add the file (either new / modified) into staging area</li>
+                        </ul>
+                    </li>
+                    <li> <span class="kc-highlight">git reset filename</span>
+                        <ul>
+                            <li>unstaging a file back to working folder</li>
+                        </ul>
+                    </li>
+                    <li> <span class="kc-highlight">git commit -m message</span>
+                        <ul>
+                            <li>committing the file from staged area to commit db. i.e. as a new commit snapshot</li>
+                        </ul>
+                    </li>
+                    <li> <span class="kc-highlight">git dddd</span>
+                        <ul>
+                            <li>Expnation</li>
+                        </ul>
+                    </li>
+                    <li> <span class="kc-highlight">git dddd</span>
+                        <ul>
+                            <li>Expnation</li>
+                        </ul>
+                    </li>
+
+                </ul>
+                </p>
+
+                <h4>Todo: Typical user journey</h4>
+                <ol>
+                    <li>User clones the remote repo</li>
+                    <li>Post making changes, they push the changes to remote repo bringing it to upto date</li>
+                    <li> If there are any new changes made by other users, we can pull these changes and get latest
+                        codebase</li>
+                </ol>
+
+                <p>
+                <p class="kc-highlight">Todo: Steps in detail</p>
+
+                <p>Initialization:
+                </p>
+
+                <p>Staging:
+                </p>
+
+                <p>Committing:
+                    .</p>
+
+                <p>Branching:
+                    .</p>
+
+                <p>Merging:
+                </p>
+
+                <p>Remote Collaboration:
+
+                </p>
+
+                </p>
+                <p><b>Note</b>: A one time activity of installing Git VCS in local machine is required before user
+                    can clone a remote repo. This gives all the tools required to manage files locally.</p>
+
+                <p>
+
+                </p>
+
+
+
+
+                <div class="clearfix"></div>
+            </section>
+            <section class="section-topic">
+
+                <div class="clearfix"></div>
+            </section>
+            <section class="section-topic">
+
+                <div class="clearfix"></div>
+            </section>
+        </section>
+    </div>
+
+</body>
+<script src="scripts/day1-script.js"></script>
+
+</html>
